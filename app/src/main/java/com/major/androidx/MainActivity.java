@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 start(Main2Activity.class);
                 break;
             case R.id.btn_2:
-
+                start(Main3Activity.class);
                 break;
             case R.id.btn_3:
 

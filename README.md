@@ -17,6 +17,11 @@
 androidx.appcompat:appcompat:1.0.2 与 com.android.support:appcompat-v7:28.0.0 不能同时存在
 使用 androidx.appcompat.app.AppCompatActivity 替代 android.support.v7.app.AppCompatActivity
 
+也可以使用
+```
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+```
 
 ## livedata, ViewModel 的使用
 
@@ -40,6 +45,7 @@ ViewModelProviders.of().get();
 
 在继承自 androidx.appcompat.app.AppCompatActivity 可以调用 getLifecycle().addObserver() 关联自定义的 LifecycleObserver
 
+MediatorLiveData是LiveData的一个子类，帮助您合并多个LiveData源。
 
 ## LiveData配合Room使用
 
@@ -60,15 +66,19 @@ ViewModelProviders.of().get();
 
 * https://github.com/googlecodelabs/android-lifecycles
 
-## todo
-
+* Android应用结构之LiveData
 https://www.jianshu.com/p/87aa6464412b
 
+todo
 
+* 基于livedata实现的mvvm_clean
 https://blog.csdn.net/a990924291/article/details/82353679
 
+Android架构：RxJava+MVVM
+https://www.jianshu.com/p/35fc4467d0e6
 
-
+Mvvm、RxJava、Retrofit 三剑合璧
+https://www.jianshu.com/p/3821dadb6a3d
 
 
 
