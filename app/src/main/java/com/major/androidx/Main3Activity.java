@@ -2,6 +2,7 @@ package com.major.androidx;
 
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.major.androidx.mvvm.LoginViewModel;
@@ -16,6 +17,7 @@ public class Main3Activity extends AppCompatActivity {
 
     private EditText mUsr;
     private EditText mPwd;
+    private TextView mState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class Main3Activity extends AppCompatActivity {
 
         mUsr = findViewById(R.id.et_usr);
         mPwd = findViewById(R.id.et_pwd);
+        mState = findViewById(R.id.tv_state);
 
         LoginViewModel model = ViewModelProviders.of(this).get(LoginViewModel.class);
 
@@ -38,17 +41,16 @@ public class Main3Activity extends AppCompatActivity {
 
         model.preLogin().observe(this, o -> {
             // 登录前的操作
-
-
+            mState.setText("准备登录");
         });
 
-        model.loading().observe(this, b->{
+        model.loading().observe(this, b -> {
             if (b) {
                 // 加载中
-
+                mState.setText("加载中");
             } else {
                 // 加载完成
-
+                mState.setText("加载完成");
             }
         });
 
@@ -59,7 +61,6 @@ public class Main3Activity extends AppCompatActivity {
         model.onSuccess().observe(this, s -> {
             Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
         });
-
 
 
     }

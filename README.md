@@ -23,6 +23,10 @@ androidx.appcompat:appcompat:1.0.2 与 com.android.support:appcompat-v7:28.0.0 �
     annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
 ```
 
+> v7 27.1.0 以后都集成有 lifecycle
+
+
+
 ## livedata, ViewModel 的使用
 
 
@@ -33,6 +37,9 @@ setValue(T)
 postValue(T)
 
 > 必须要从主线程调用setValue(T) 方法来更新LiveData 对象. 如果代码在工作线程中执行, 你可以使用postValue(T) 方法来更新LiveData对象
+
+
+mutable 易变的
 
 
 LifecycleObserver
@@ -69,13 +76,10 @@ MediatorLiveData是LiveData的一个子类，帮助您合并多个LiveData源。
 * Android应用结构之LiveData
 https://www.jianshu.com/p/87aa6464412b
 
-todo
-
 * 基于livedata实现的mvvm_clean
 https://blog.csdn.net/a990924291/article/details/82353679
 
-Android架构：RxJava+MVVM
-https://www.jianshu.com/p/35fc4467d0e6
+todo
 
 Mvvm、RxJava、Retrofit 三剑合璧
 https://www.jianshu.com/p/3821dadb6a3d

@@ -35,10 +35,17 @@ public class LoginViewModel extends AndroidViewModel /*implements LifecycleObser
         // 调用预登陆
         preLogin().setValue(null);
 
-        new Thread(()->{
+        new Thread(() -> {
+            SystemClock.sleep(400);
+            loading().postValue(true);
             SystemClock.sleep(2000);
-            // 调用登录成功
-            onSuccess().postValue("登录成功！");
+            loading().postValue(false);
+            if (System.currentTimeMillis() % 2 == 0) {
+                // 调用登录成功
+                onSuccess().postValue("登录成功！");
+            } else {
+                onFailure().postValue("登录失败。");
+            }
 
         }).start();
     }
