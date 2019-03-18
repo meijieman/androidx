@@ -79,9 +79,27 @@ https://www.jianshu.com/p/87aa6464412b
 * 基于livedata实现的mvvm_clean
 https://blog.csdn.net/a990924291/article/details/82353679
 
-todo
 
-Mvvm、RxJava、Retrofit 三剑合璧
+------
+# 使用 DataBinding 实现 mvvm
+
+开启 databinding(gradle > 1.5)
+
+```gradle
+android {
+    ...
+    dataBinding {
+        enabled true
+    }
+    ...
+}
+```
+
+  android:text="@{`前缀 ` + userInfoViewModel.name + ` aha`}"
+
+
+## 参考资料
+* Mvvm、RxJava、Retrofit 三剑合璧
 https://www.jianshu.com/p/3821dadb6a3d
 
 
