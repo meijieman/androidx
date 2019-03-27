@@ -29,6 +29,11 @@ androidx.appcompat:appcompat:1.0.2 与 com.android.support:appcompat-v7:28.0.0 �
 
 ## livedata, ViewModel 的使用
 
+MainViewModel vm = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(MainViewModel.class);
+
+// 需要添加依赖 "android.arch.lifecycle:extensions:1.1.1"， 具有缓存功能
+MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+
 
 MutableLiveData
 
